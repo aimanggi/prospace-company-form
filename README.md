@@ -18,7 +18,14 @@ git clone https://github.com/aimanggi/prospace-company-form.git
 
 2) Run MongoDB
 
-Open terminal and run `sudo service mongod start`
+- Open terminal and run `sudo service mongod start`
+
+- Start using mongoDB in server folder
+```
+cd server/
+npm run server
+```
+
 
 
 3) Installing App
@@ -40,12 +47,6 @@ npm install
 ```
 cd server/
 mongo
-```
-
-- Run Server
-```
-cd server/
-npm run server
 ```
 
 - Run React App
