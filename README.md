@@ -43,10 +43,10 @@ npm install
 ```
 
 4) Run App
-- Run MongoDB Shell
+- Run Server
 ```
 cd server/
-mongo
+npm run server
 ```
 
 - Run React App
