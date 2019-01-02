@@ -1,9 +1,9 @@
-## Prospace Frontend Test
+# Prospace Frontend Test
 
 Company information application using ReactJs in client side and NodeJs in server side.
 
 
-# Prerequisites
+## Prerequisites
 Make sure you have these installed
 
 - Node.js
@@ -58,7 +58,7 @@ npm run start
 
 Client app will run in localhost:3000 and server side will run in localhost:8000
 
-# Built With
+## Built With
 Client Side
 
 - ReactJs
