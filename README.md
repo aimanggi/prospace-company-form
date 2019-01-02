@@ -13,7 +13,7 @@ Make sure you have these installed
 1) Clone Git Repository
 
 ```
-git clone https://github.com/aimanggi/ohlc-chart.git
+git clone https://github.com/aimanggi/prospace-company-form.git
 ```
 
 2) Run MongoDB
