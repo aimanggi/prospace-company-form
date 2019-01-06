@@ -1,0 +1,88 @@
+.col-sm-6{
+    display: inline-flex;
+}
+
+.create{
+    margin-top: 20px;
+    display: block;
+}
+
+h2{
+    font-family: 'Gill Sans', sans-serif;
+    margin-top: 30px;
+    text-align: center;
+}
+
+h1{
+    margin-bottom: 40px;
+}
+
+.form-control{
+    width: 100%;
+}
+
+.box-border{
+    width: 500px;
+    margin-top: 40px;
+    margin-right: 5%;
+    margin-left: 5%;
+    box-shadow: 2px -1px 20px 0px rgb(138, 133, 126);
+    background-color:whitesmoke;
+    padding-bottom: 30px;
+    border-radius: 10px;
+}
+
+form.company{
+    padding: 20px;
+    
+}
+
+.form.company.box{
+    margin-bottom: 20px;
+}
+
+.input{
+    margin-bottom: 10px;
+}
+
+.input-office{
+    padding: 0px
+}
+
+#none{
+    display: none;
+}
+
+.inputlatitude{
+    width: 100%;
+}
+
+.inputlongitude{
+    margin-top: 32px;
+    width: 100%;
+}
+
+.create{
+    text-align: center;
+}
+
+.create.office{
+    margin-top: 35px;
+}
+
+.warn{
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    background-color: steelblue;
+}
+
+.warn.duplicated{
+    background-color: rgb(97, 11, 11)
+}
+
+@media (min-width: 576px) {
+    .col-sm-6 {
+        max-width: 100%; 
+    }
+}

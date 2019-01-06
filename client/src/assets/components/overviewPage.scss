@@ -1,0 +1,63 @@
+.box-card{
+    width: 50%;
+    padding-left: 47px;
+    padding-right: 72px;
+    margin-bottom: 40px;
+}
+
+.card{
+    border-radius: 10px;
+    box-shadow: 2px -1px 20px 0px rgba(177, 170, 161, 0.698);
+}
+
+.office.card{
+    color: black;
+    width: 500px;
+}
+
+.office.card:hover{
+    text-decoration: non !important;
+}
+
+.box-card.comp{
+    margin-top: 50px;
+    width: 100%;
+    padding-left: 47px;
+    padding-right: 72px;
+    margin-bottom: 40px;
+}
+
+.box-card-a:hover{
+    text-decoration: none
+}
+
+link{
+    color: black;
+    text-decoration: none
+}
+
+link:hover{
+    text-decoration: none
+}
+
+.text-left{
+    margin-left: 50px;
+}
+
+hr{
+    width: 90%;
+    margin-top: 40px;
+    border-top: 2px solid #8c8b8b;
+}
+
+.overview{
+    margin-top: 20px;
+}
+
+.close{
+    position: relative;
+    left: 470px;
+    z-index: 2;
+    font-size: 24pt;
+    top: 10px;
+}
