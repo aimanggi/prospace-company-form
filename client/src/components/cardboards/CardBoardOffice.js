@@ -12,28 +12,27 @@ class CardBoard extends Component {
     }
   }
 
+  // Delete office with fetch delete API
   handleDelete(id) {
     const { deleteOffice } = this.props;
     fetch('http://localhost:8000/API/forms/company/' +this.props.params + '/office/' + id, {
         method: "DELETE"  
       })
-      // .then(res => res.json())
+      // Refresh data after delete
       .then((res) => {
         if (res.ok) {
             this.fetchOffice();
         }
-        console.log(res.json)
     })
       .then(() => deleteOffice(id))
       
       
       }
-
+  
+  // Redux DELETE_OFFICE
   deleteOffice(e, id){
         e.preventDefault();
-        this.props.deleteOffice(id)
-        // .then(() => this.fetchOffice())
-    
+        this.props.deleteOffice(id)    
       }
 
   componentDidMount() {
@@ -61,7 +60,7 @@ class CardBoard extends Component {
     let data = this.state.currentOffice;
     return data.map(e => (
         <div className="box-card col-sm-6" key={e.officeId}>
-         <div className="icon-exit"><button type="button" className="icon-x close" onClick={() => this.handleDelete(e.officeId)} aria-label="Close">
+         <div className="icon-exit"><button type="button" className="icon-x close" onClick={() => { if (window.confirm('Are you sure want to delete this office?')) this.handleDelete(e.officeId) }} aria-label="Close">
           <span aria-hidden="true">&times;</span>
           </button>
       </div>
@@ -70,10 +69,10 @@ class CardBoard extends Component {
               <h3>{e.name}</h3>
             </div>
             <div className="card-body">
-              <p className="card-text">Location :</p>
-              <p className="card-text">Lat : <span>{e.latitude}</span></p>
-              <p className="card-text">Log : <span>{e.longitude}</span></p>
-              <p className="card-text">Office Start Date: <span>{e.startDate}</span></p>
+              <p className="card-text"><b>Location :</b></p>
+              <p className="card-text loc"><b>Latitude : </b><span>{e.latitude}</span></p>
+              <p className="card-text loc"><b>Longitude : </b><span>{e.longitude}</span></p>
+              <p className="card-text"><b>Office Start Date: </b><span>{e.startDate}</span></p>
             </div>
           </div>
         </div>
@@ -82,7 +81,7 @@ class CardBoard extends Component {
   
 
   render() {
-    console.log(this.state)
+    console.log(this.state.currentOffice)
     return (
       <div>
          {this.companyCardLoop()}

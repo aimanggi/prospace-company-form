@@ -13,10 +13,23 @@
 .office.card{
     color: black;
     width: 500px;
+    text-decoration: none
+}
+
+a:hover{
+    color: black;
+    text-decoration: none
+}
+h3{
+    color: black
+}
+
+h3:hover{
+    text-decoration: none
 }
 
 .office.card:hover{
-    text-decoration: non !important;
+    text-decoration: none !important;
 }
 
 .box-card.comp{
@@ -45,7 +58,8 @@ link:hover{
 }
 
 hr{
-    width: 90%;
+    margin-right: 80px;
+    margin-left: 60px;
     margin-top: 40px;
     border-top: 2px solid #8c8b8b;
 }
@@ -60,4 +74,41 @@ hr{
     z-index: 2;
     font-size: 24pt;
     top: 10px;
+}
+
+.card-text.strong{
+    font-weight: bold
+}
+
+.card-text.loc{
+    margin-left: 20px;
+}
+
+.backhome{
+    width: 20%;
+    position: relative;
+    left: 77%;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 576px) {
+    .close {
+        position: relative;
+        left: 300px;
+        z-index: 2;
+        font-size: 24pt;
+        top: 10px;
+    }
+
+    .box-card{
+        width: 100%;
+        padding: 0
+    }
+
+    .backhome{
+        width: 80%;
+    position: relative;
+    left: 10%;
+    margin-bottom: 10px;
+    }
 }

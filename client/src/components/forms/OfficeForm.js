@@ -19,9 +19,9 @@ class OfficeForm extends Component {
             companyList: [],
             isCreated: false
           };
-          console.log(this.state)
       }
 
+      //Handle ocChange for data input
       handleName(text){
           this.setState({ name:text.target.value })  
       }
@@ -45,7 +45,8 @@ class OfficeForm extends Component {
         this.setState({ companyId:text.currentTarget.value })  
     }
 
-    createOffice = (e) => {
+  // Submit office
+  createOffice = (e) => {
           e.preventDefault();
           const form  = this.state
           this.props.addOffice(form);
@@ -79,7 +80,7 @@ class OfficeForm extends Component {
                     }),
         })
 
-          // Company validation
+          // Office validation
           .then((response) => {
             if(response.ok){
               this.setState({ 
@@ -116,7 +117,7 @@ class OfficeForm extends Component {
             isCreated: false
             
          })
-         console.log(this.state)
+    
         }
 
         dropdownSelect(){
@@ -217,7 +218,7 @@ class OfficeForm extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state); 
+
   return {
     company:state.company
   };

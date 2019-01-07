@@ -23,9 +23,8 @@ const rootReducer = (state = initialState, action) => {
       company.companyId !== action.id)};
 
     case DELETE_OFFICE:
-      return {
-          ...state.office.slice(action.id, 1)
-      };
+      return { ...state, office: state.office.filter(office =>
+        office.officeId !== action.id)};
 
     default:
       return state;

@@ -25,6 +25,7 @@ class OverviewPage extends Component {
     this.fetchCompany()
   }
 
+  // Get all company
   fetchCompany() {
     fetch('http://localhost:8000/API/forms/company', {
         method: "GET"
@@ -52,7 +53,6 @@ class OverviewPage extends Component {
 
   render() {
    
-    console.log(this.state.show)
     const Blank =  <p className='blank text-center'>There is no company created yet</p>
     
     return (
@@ -62,11 +62,11 @@ class OverviewPage extends Component {
            <CompanyForm></CompanyForm>
       </div>
       <div className="box-border col-sm-6">
-          <OfficeForm showCompany = {this.fetchOption}></OfficeForm>
+          <OfficeForm></OfficeForm>
       </div>
       <hr></hr>
       <div className="overview col-sm-12">
-      <h1 className='text-left'>Company List</h1>
+      <h1 className='text-left'>Companies List</h1>
             { this.state.show ?
             <CardBoard/> :  Blank}
       </div>

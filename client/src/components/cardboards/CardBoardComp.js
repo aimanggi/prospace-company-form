@@ -6,14 +6,13 @@ import {
 } from "react-router-dom";
 
 
-
-
 class CardBoard extends Component {
   constructor(props){
     super(props)
       this.handleDelete=this.handleDelete.bind(this)
   }
  
+  //Delete company with fetch delete API 
   handleDelete(id) {
     const { deleteCompany } = this.props;
     fetch('http://localhost:8000/API/forms/company/' + id, {
@@ -22,14 +21,15 @@ class CardBoard extends Component {
       .then(() => deleteCompany(id));
       
       }
-     
+  
+  // Company card board looping, using data in redux
   companyCardLoop(){
     let data = this.props.company;
     return data.map(e => (
     
         <div  key={e.companyId} className="box-card col-sm-6">
         <div className="icon-exit">
-          <button  onClick={() => this.handleDelete(e.companyId)} 
+          <button  onClick={(id) => { if (window.confirm('Are you sure want to delete this company?')) this.handleDelete(e.companyId) }} 
                    type="button" 
                    className="icon-x close" 
                    aria-label="Close">
@@ -43,15 +43,19 @@ class CardBoard extends Component {
             </div>
             </Link>
             <div className="card-body">
-              <p className="card-text">Name : <span>{e.name}</span></p>
-              <p className="card-text">Address : <span>{e.address}</span></p>
-              <p className="card-text">Revenue : <span>{e.revenue}</span></p>
+              <p className="card-text strong">Name : </p>
+                  <p>{e.name}</p>
+              <p className="card-text strong">Address :</p>
+                  <p>{e.address}</p>
+              <p className="card-text strong">Revenue : </p>
+              <p>{e.revenue}</p>
             </div>
           </div>
         </div>
     )
   )}
 
+  //Redux DELETE_COMPANY
   deleteCompany(e, id){
     e.preventDefault();
     this.props.deleteCompany(id)
@@ -65,7 +69,6 @@ class CardBoard extends Component {
   }
 
   render() {
-   console.log(this.props) 
     return (
       <div>
          {this.companyCardLoop()}

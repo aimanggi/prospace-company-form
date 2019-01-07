@@ -21,11 +21,10 @@ class CompanyForm extends Component {
               isDuplicated: false
               
             };
-            console.log(this.state)
            this.createCompany = this.createCompany.bind(this) 
         }
 
-    
+        // Handle onChange every state
         handleName(text){
             this.setState({ name:text.target.value })  
          }
@@ -48,7 +47,8 @@ class CompanyForm extends Component {
             this.setState(obj);  
           }
 
-            createCompany = (e) => {
+// Submit company
+ createCompany = (e) => {
             e.preventDefault();
             const form  = this.state
             this.props.addCompany(form);
@@ -59,8 +59,11 @@ class CompanyForm extends Component {
             obj.revenue = this.state.revenue;
             obj.phoneCode = this.state.phoneCode;
             obj.phoneNumber = this.state.phoneNumber;
+            
+            // Generate name for param 
             let id = obj.name.replace(/\s+/g, '-').toLowerCase()
 
+            // Post to API
             fetch('http://localhost:8000/API/forms/company', {
         
                     method: 'POST',
@@ -77,6 +80,7 @@ class CompanyForm extends Component {
                                 "phoneNumber": obj.phoneNumber,
                             }),
                 })
+              
                 // Company validation
                 .then((response) => {
                   if(response.ok){
@@ -117,7 +121,7 @@ class CompanyForm extends Component {
               isDuplicated: false
               
            })
-           console.log(this.state)
+      
           }
 
   render() {
@@ -212,7 +216,6 @@ class CompanyForm extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state); 
   return {
     company:state.company
   };
